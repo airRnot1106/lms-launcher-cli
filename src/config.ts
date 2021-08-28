@@ -15,7 +15,7 @@ export default class Config implements IFunc {
     this.cipher = new Cipher();
     if (!fs.existsSync(__dirname + '/config.ini')) {
       fs.writeFileSync(__dirname + '/config.ini', '');
-      console.log('> Created Config file\n');
+      console.log(chalk.yellow('> Created Config file'));
     }
     this._properties = propertiesReader(__dirname + '/config.ini');
   }
