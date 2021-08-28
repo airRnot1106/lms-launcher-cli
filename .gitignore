@@ -1,4 +1,4 @@
 .history
 node_modules
 src/config.ini
-dist/config.ini
+dist/
