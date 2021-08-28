@@ -2,7 +2,6 @@ import puppeteer from 'puppeteer-core';
 import yargs from 'yargs';
 import chalk from 'chalk';
 import { Caution, Config, Recorder } from './index';
-import { join } from 'path/posix';
 
 type Argv = {
   [x: string]: unknown;
