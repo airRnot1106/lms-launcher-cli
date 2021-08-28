@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/clui": "^0.3.1",
     "@types/crypto-js": "^4.0.2",
     "@types/node": "^16.7.1",
     "@types/properties-reader": "^2.1.1",
@@ -26,6 +27,7 @@
   },
   "dependencies": {
     "chalk": "^4.1.2",
+    "clui": "^0.3.6",
     "crypto-js": "^4.1.1",
     "properties-reader": "^2.2.0",
     "puppeteer-core": "^10.2.0",
