@@ -1,7 +1,7 @@
 import puppeteer from 'puppeteer-core';
-import yargs from 'yargs';
+import yargs, { boolean } from 'yargs';
 import chalk from 'chalk';
-import { Caution, Config, Login } from './index';
+import { Caution, Config, Destroy, Login } from './index';
 
 type Argv = {
   [x: string]: unknown;
@@ -12,7 +12,7 @@ type Argv = {
 export default class App {
   caution: Caution;
   private argv: Argv | undefined;
-  private func: Config | Login | undefined;
+  private func: Config | Destroy | Login | undefined;
   constructor() {
     this.caution = new Caution();
     this.argv = undefined;
@@ -20,8 +20,19 @@ export default class App {
   }
   async initialize() {
     const argv = await yargs
-      .command('c', 'configure user data')
-      .command('r', 'recored an attendance')
+      .command(
+        'c [remove]',
+        'Configure user data. The option --remove will destroy the saved configuration',
+        (yargs) => {
+          yargs.positional('remove', {
+            type: 'boolean',
+            default: false,
+            describe:
+              'The option --remove will destroy the saved configuration.',
+          });
+        }
+      )
+      .command('l', 'Login to LMS')
       .demandCommand(1)
       .help().argv;
     this.argv = argv;
@@ -31,6 +42,9 @@ export default class App {
     switch (command) {
       case 'c':
       case 'C':
+        if (this.argv?.remove) {
+          return new Destroy();
+        }
         return new Config();
       case 'r':
       case 'R':
