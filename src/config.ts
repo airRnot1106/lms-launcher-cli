@@ -20,7 +20,7 @@ export default class Config implements IFunc {
     this._properties = propertiesReader(__dirname + '/config.ini');
   }
   async excute() {
-    console.log('Config: ');
+    console.log('> Config <');
     const username = readlineSync.question(chalk.bold('Enter your username: '));
     const password = readlineSync.questionNewPassword(
       chalk.bold('Enter your password: '),
@@ -35,7 +35,7 @@ export default class Config implements IFunc {
     await this._properties.save(__dirname + '/config.ini').then(
       (data) => {
         console.log(
-          chalk.greenBright('Login data has been saved successfully')
+          chalk.greenBright('> Login data has been saved successfully')
         );
       },
       (error) => {

@@ -46,8 +46,8 @@ export default class App {
           return new Destroy();
         }
         return new Config();
-      case 'r':
-      case 'R':
+      case 'l':
+      case 'L':
         return new Login();
       default:
         this.caution.toString(
@@ -65,15 +65,17 @@ export default class App {
       );
     }
   }
-  excute() {
+  async excute() {
     this.checkExistsFunc();
-    this.func?.excute();
+    await this.func?.excute();
   }
 }
 
 (async () => {
   const app = new App();
   await app.initialize();
-  console.log(chalk.underline('Start AAR...'));
-  app.excute();
+  console.log(chalk.underline('Launch...'));
+  await app.excute();
+  console.log(chalk.underline('Stop.'));
+  process.exit(0);
 })();
