@@ -1,0 +1,28 @@
+{
+  "name": "auto-attendance-recorder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode=development",
+    "start": "node dist/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.7.1",
+    "@types/properties-reader": "^2.1.1",
+    "@types/puppeteer-core": "^5.4.0",
+    "ts-loader": "^9.2.5",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.3.5",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.0.0"
+  },
+  "dependencies": {
+    "properties-reader": "^2.2.0",
+    "puppeteer-core": "^10.2.0"
+  }
+}
