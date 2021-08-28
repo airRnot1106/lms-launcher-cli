@@ -21,7 +21,7 @@ export default class Login implements IFunc {
     this._properties = propertiesReader(__dirname + '/config.ini');
   }
   excute() {
-    console.log('Config: ');
+    console.log('Login: ');
     const username = <string>this._properties.get('loginData.username');
     const encryptedPassword = <string>(
       this._properties.get('loginData.password')
@@ -34,6 +34,16 @@ export default class Login implements IFunc {
       });
       const page = (await browser.pages())[0] || (await browser.newPage());
       await page.setViewport({ width: 1280, height: 800 });
+      await page.goto('https://tlms.tsc.u-tokai.ac.jp/login/index.php');
+      await page.type('#username', username);
+      await page.type('#password', password);
+      await Promise.all([page.waitForNavigation(), page.click('#loginbtn')]);
+      if (await page.$('.alert-danger')) {
+        this.caution.toString(
+          new Error('Login Error: Not a valid account name or password')
+        );
+      }
+      await page.goto('https://tlms.tsc.u-tokai.ac.jp/my/');
     })();
   }
 }

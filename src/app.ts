@@ -63,15 +63,3 @@ export default class App {
   console.log(chalk.underline('Start AAR...'));
   app.excute();
 })();
-
-/*
-(async () => {
-  const browser = await puppeteer.launch({
-    // MacにインストールされているChromeを使う。
-    channel: 'chrome',
-    headless: false,
-  });
-  const page = (await browser.pages())[0] || (await browser.newPage());
-  await page.setViewport({ width: 1280, height: 800 });
-})();
-*/
