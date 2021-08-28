@@ -1,7 +1,7 @@
 import puppeteer from 'puppeteer-core';
 import yargs from 'yargs';
 import chalk from 'chalk';
-import { Caution, Config, Recorder } from './index';
+import { Caution, Config, Login } from './index';
 
 type Argv = {
   [x: string]: unknown;
@@ -12,7 +12,7 @@ type Argv = {
 export default class App {
   caution: Caution;
   private argv: Argv | undefined;
-  private func: Config | Recorder | undefined;
+  private func: Config | Login | undefined;
   constructor() {
     this.caution = new Caution();
     this.argv = undefined;
@@ -34,7 +34,7 @@ export default class App {
         return new Config();
       case 'r':
       case 'R':
-        return new Recorder();
+        return new Login();
       default:
         this.caution.toString(
           new Error(
