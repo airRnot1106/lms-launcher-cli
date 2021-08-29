@@ -62,6 +62,12 @@ Open LMSのユーザーデータを設定します。初回時は必ず実行し
 
 Open LMSを終了する場合はコンソールでyキーを入力してください。
 
+## Future Plans
+
+* CLI上で出席登録をできるようにする
+* 課題の提出をできるようにする
+* 資料のダウンロードをできるようにする
+
 ## Author
 
 * Github: [airRnot1106](https://github.com/airRnot1106)
