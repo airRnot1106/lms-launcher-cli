@@ -36,6 +36,8 @@ Options:
 
 `--help`オプションをつけると、コマンドとオプションの一覧を見ることができます。
 
+### Commands
+
 #### `$ npx lms-launcher-cli c`
 
 <img width="727" alt="config" src="https://user-images.githubusercontent.com/62370527/131256471-46157ad7-40b0-4046-82f9-ddcea8cdc380.png">
@@ -59,6 +61,10 @@ Open LMSのユーザーデータを設定します。初回時は必ず実行し
 設定したユーザーデータでOpen LMSにログインします。Google Chromeを使用しますので、事前にインストールを行ってください。<br>ログインが完了すると、自動的にダッシュボードのページが開かれます。
 
 Open LMSを終了する場合はコンソールでyキーを入力してください。
+
+## Author
+
+* Github: [airRnot1106](https://github.com/airRnot1106)
 
 ## LICENSE
 
