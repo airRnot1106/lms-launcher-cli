@@ -80,6 +80,6 @@ export function cli() {
     console.log(chalk.underline('Stop.'));
     process.exit(0);
   })();
-
-  cli();
 }
+
+cli();
