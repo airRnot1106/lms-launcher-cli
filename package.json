@@ -13,7 +13,7 @@
   },
   "preferGlobal": true,
   "bin": {
-    "lms-launcher": "dist/cli.js"
+    "lms-launcher-cli": "dist/cli.js"
   },
   "repository": {
     "type": "git",
