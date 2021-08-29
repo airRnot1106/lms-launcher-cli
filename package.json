@@ -1,6 +1,6 @@
 {
   "name": "lms-launcher",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A launcher for Tokai University's Open LMS",
   "main": "dist/bundle.js",
   "files": [
