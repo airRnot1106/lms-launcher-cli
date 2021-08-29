@@ -1,15 +1,34 @@
 {
-  "name": "auto-attendance-recorder",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "lms-launcher",
+  "version": "0.1.0",
+  "description": "A launcher for Tokai University's Open LMS",
+  "main": "dist/bundle.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "webpack --mode=development",
     "start": "node dist/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "preferGlobal": true,
+  "bin": {
+    "lms-launcher": "dist/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airRnot1106/lms-launcher.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "cli",
+    "lms",
+    "launcher"
+  ],
+  "author": "airrnot1106",
+  "license": "MIT",
   "devDependencies": {
     "@types/clui": "^0.3.1",
     "@types/crypto-js": "^4.0.2",

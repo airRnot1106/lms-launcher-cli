@@ -71,11 +71,15 @@ export default class App {
   }
 }
 
-(async () => {
-  const app = new App();
-  await app.initialize();
-  console.log(chalk.underline('Launch...'));
-  await app.excute();
-  console.log(chalk.underline('Stop.'));
-  process.exit(0);
-})();
+export function cli() {
+  (async () => {
+    const app = new App();
+    await app.initialize();
+    console.log(chalk.underline('Launch...'));
+    await app.excute();
+    console.log(chalk.underline('Stop.'));
+    process.exit(0);
+  })();
+
+  cli();
+}
