@@ -1,6 +1,6 @@
 # lms-launcher-cli
 
-[![build](https://github.com/airRnot1106/lms-launcher-cli/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/airRnot1106/lms-launcher-cli/actions/workflows/node.js.yml)![npm](https://img.shields.io/npm/dt/lms-launcher-cli)<img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=plastic"> <img src="https://img.shields.io/badge/-Npm-CB3837.svg?logo=npm&style=plastic">
+[![build](https://github.com/airRnot1106/lms-launcher-cli/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/airRnot1106/lms-launcher-cli/actions/workflows/node.js.yml) ![npm](https://img.shields.io/npm/dt/lms-launcher-cli) <img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=plastic">  <img src="https://img.shields.io/badge/-Npm-CB3837.svg?logo=npm&style=plastic">
 
 <img width="725" alt="overview" src="https://user-images.githubusercontent.com/62370527/131255227-4733176e-15fd-458d-b8a2-a8aff71c9e0f.png">
 
