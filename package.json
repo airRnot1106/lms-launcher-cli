@@ -4,7 +4,9 @@
   "description": "A launcher for Tokai University's Open LMS",
   "main": "dist/bundle.js",
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "webpack --mode=development",
