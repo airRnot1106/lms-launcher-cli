@@ -1,8 +1,10 @@
 # lms-launcher-cli
 
+[![build](https://github.com/airRnot1106/lms-launcher-cli/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/airRnot1106/lms-launcher-cli/actions/workflows/node.js.yml)![npm](https://img.shields.io/npm/dt/lms-launcher-cli)<img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=plastic"> <img src="https://img.shields.io/badge/-Npm-CB3837.svg?logo=npm&style=plastic">
+
 <img width="725" alt="overview" src="https://user-images.githubusercontent.com/62370527/131255227-4733176e-15fd-458d-b8a2-a8aff71c9e0f.png">
 
-lms-launcher-cliは、東海大学生のためのNode CLIです。<br>CLIを使うことで、ブラウザを開き、Open LMSにログインするまでの流れを自動で行うことができます。<br>
+lms-launcher-cli は、東海大学生のための Node CLI です。<br>CLI を使うことで、ブラウザを開き、Open LMS にログインするまでの流れを自動で行うことができます。<br>
 
 ## Install
 
@@ -12,7 +14,7 @@ $ npm install -g lms-launcher-cli
 
 ## Usage
 
-Installコマンドを実行する前に、NodeとGoogle Chromeをインストールする必要があります。<br>Nodeのインストール方法はさまざまなサイトで解説されていますので、[そちら](https://www.google.com/search?q=node+%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)を参考にしてください。<br>Nodeのインストールが完了したら、上記のInstallコマンドを実行してください。<br>
+Install コマンドを実行する前に、Node と Google Chrome をインストールする必要があります。<br>Node のインストール方法はさまざまなサイトで解説されていますので、[そちら](https://www.google.com/search?q=node+%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)を参考にしてください。<br>Node のインストールが完了したら、上記の Install コマンドを実行してください。<br>
 
 ```console
 $ npx lms-launcher-cli
@@ -42,9 +44,9 @@ Options:
 
 <img width="727" alt="config" src="https://user-images.githubusercontent.com/62370527/131256471-46157ad7-40b0-4046-82f9-ddcea8cdc380.png">
 
-Open LMSのユーザーデータを設定します。初回時は必ず実行してください。<br>
+Open LMS のユーザーデータを設定します。初回時は必ず実行してください。<br>
 
-以下を入力してください: 
+以下を入力してください:
 
 `Enter your username`: 学籍番号<br>`Enter your password`: パスワード<br>`Reinput a same one to confirm it`: 確認のため、再度パスワード<br>
 
@@ -58,19 +60,19 @@ Open LMSのユーザーデータを設定します。初回時は必ず実行し
 
 <img width="725" alt="login" src="https://user-images.githubusercontent.com/62370527/131256749-1e3cc0e8-0efe-418b-8a5f-4f880654fea9.png">
 
-設定したユーザーデータでOpen LMSにログインします。Google Chromeを使用しますので、事前にインストールを行ってください。<br>ログインが完了すると、自動的にダッシュボードのページが開かれます。
+設定したユーザーデータで Open LMS にログインします。Google Chrome を使用しますので、事前にインストールを行ってください。<br>ログインが完了すると、自動的にダッシュボードのページが開かれます。
 
-Open LMSを終了する場合はコンソールでyキーを入力してください。
+Open LMS を終了する場合はコンソールで y キーを入力してください。
 
 ## Future Plans
 
-* CLI上で出席登録をできるようにする
-* 課題の提出をできるようにする
-* 資料のダウンロードをできるようにする
+- CLI 上で出席登録をできるようにする
+- 課題の提出をできるようにする
+- 資料のダウンロードをできるようにする
 
 ## Author
 
-* Github: [airRnot1106](https://github.com/airRnot1106)
+- Github: [airRnot1106](https://github.com/airRnot1106)
 
 ## LICENSE
 
