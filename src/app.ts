@@ -1,7 +1,7 @@
 import puppeteer from 'puppeteer-core';
 import yargs, { boolean } from 'yargs';
 import chalk from 'chalk';
-import { Caution, Config, Destroy, Login } from './index';
+import { Caution, Config, Destroy, Login, Downloader } from './index';
 
 type Argv = {
   [x: string]: unknown;
@@ -12,7 +12,7 @@ type Argv = {
 export default class App {
   caution: Caution;
   private argv: Argv | undefined;
-  private func: Config | Destroy | Login | undefined;
+  private func: Config | Destroy | Login | Downloader | undefined;
   constructor() {
     this.caution = new Caution();
     this.argv = undefined;
@@ -49,6 +49,9 @@ export default class App {
       case 'l':
       case 'L':
         return new Login();
+      case 'd':
+      case 'D':
+        return new Downloader();
       default:
         this.caution.toString(
           new Error(
