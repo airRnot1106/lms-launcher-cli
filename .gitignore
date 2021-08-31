@@ -1,6 +1,6 @@
 .history
 node_modules
 src/config.ini
-dist/
+dist/config.ini
 bin/
 misc/
