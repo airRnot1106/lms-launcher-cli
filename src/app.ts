@@ -1,7 +1,14 @@
 import puppeteer from 'puppeteer-core';
 import yargs, { boolean } from 'yargs';
 import chalk from 'chalk';
-import { Caution, Config, Destroy, Login, Downloader } from './index';
+import {
+  Caution,
+  Config,
+  Destroy,
+  Login,
+  Downloader,
+  DownloaderWin,
+} from './index';
 
 type Argv = {
   [x: string]: unknown;
@@ -10,10 +17,18 @@ type Argv = {
 };
 
 export default class App {
+  private isWin: boolean;
   caution: Caution;
   private argv: Argv | undefined;
-  private func: Config | Destroy | Login | Downloader | undefined;
+  private func:
+    | Config
+    | Destroy
+    | Login
+    | Downloader
+    | DownloaderWin
+    | undefined;
   constructor() {
+    this.isWin = process.platform == 'win32';
     this.caution = new Caution();
     this.argv = undefined;
     this.func = undefined;
@@ -51,7 +66,11 @@ export default class App {
         return new Login();
       case 'd':
       case 'D':
-        return new Downloader();
+        if (this.isWin) {
+          return new DownloaderWin();
+        } else {
+          return new Downloader();
+        }
       default:
         this.caution.toString(
           new Error(
