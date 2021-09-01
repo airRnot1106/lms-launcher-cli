@@ -229,6 +229,7 @@ export default class Downloader implements IFunc {
       console.log('');
       targetClass = classNames[index];
       console.log(`${targetClass}: `);
+      console.log('');
     }
     const parent = await this.page.$('div.card-deck');
     const element = await parent?.$x(
@@ -254,7 +255,7 @@ export default class Downloader implements IFunc {
     const classLengthArray: string[] = [];
     for (let i = 0; i < classLength; i++) {
       classLengthArray.push(`第${i.toString(10).padStart(2, '0')}回`);
-      console.log(`[${keys[i]}] ${classLengthArray[i]}`);
+      console.log(`[${keys[i]}] ${classLengthArray[i].toString()}`);
     }
     console.log('');
     let index: number = 100;
@@ -271,6 +272,7 @@ export default class Downloader implements IFunc {
     }
     console.log('');
     console.log(`${classLengthArray[index]}: `);
+    console.log('');
     const targetSection: TargetSection = {
       index: index,
       id: `#section-${index}`,
@@ -312,17 +314,22 @@ export default class Downloader implements IFunc {
     const names: string[] = [];
     for (let i = 0; i < resourceArray.length; i++) {
       names.push(resourceArray[i].name);
-      console.log(`[${keys[i]}] ${resourceArray[i].name}`);
+      console.log(`[${keys[i]}] ${resourceArray[i].name.toString()}`);
     }
+    console.log('[0] CANCEL');
     console.log('');
     const downloadQueue: Resource[] = [];
     while (1) {
       let index: number = 100;
       while (1) {
         const key = readlineSync.question(chalk.bold('Which resources?: '), {
-          limit: /^[123456789abcdefghijklmnopqrstuvwxyz]{1}$/i,
+          limit: /^[123456789abcdefghijklmnopqrstuvwxyz0]{1}$/i,
           limitMessage: chalk.yellow('Please enter the correct key'),
         });
+        if (key == '0') {
+          index = -1;
+          break;
+        }
         index = keys.indexOf(key.toString());
         if (index <= resourceArray.length) {
           break;
@@ -334,7 +341,9 @@ export default class Downloader implements IFunc {
       }
       downloadQueue.push(resourceArray[index]);
       console.log(
-        chalk.green(`> Added ${resourceArray[index].name} to the queue`)
+        chalk.green(
+          `> Added ${resourceArray[index].name.toString()} to the queue`
+        )
       );
       const isContinue = readlineSync.keyInYNStrict(
         chalk.bold('Do you want to download other resources?')
@@ -363,7 +372,9 @@ export default class Downloader implements IFunc {
     const link = await resource.element.$('.aalink');
     await link?.click();
     await this.waitDownloadComplete(downloadPath);
-    console.log(chalk.greenBright(`> ${resource.name} download has completed`));
+    console.log(
+      chalk.greenBright(`> ${resource.name.toString()} download has completed`)
+    );
   }
 
   private async waitDownloadComplete(downloadPath: string) {
