@@ -156,6 +156,8 @@ export default class Downloader implements IFunc {
         { cancel: false }
       );
       targetClass = classNames[index];
+      console.log('');
+      console.log(`${targetClass}: `);
     }
     const parent = await this.page.$('div.card-deck');
     const element = await parent?.$x(
@@ -187,6 +189,8 @@ export default class Downloader implements IFunc {
       chalk.bold('Which sections?'),
       { cancel: false }
     );
+    console.log('');
+    console.log(`${classLengthArray[index]}: `);
     const targetSection: TargetSection = {
       index: index,
       id: `#section-${index}`,
