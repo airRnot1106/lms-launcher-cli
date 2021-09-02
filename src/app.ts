@@ -48,6 +48,7 @@ export default class App {
         }
       )
       .command('l', 'Login to LMS')
+      .command('d', 'Download class resources')
       .demandCommand(1)
       .help().argv;
     this.argv = argv;
