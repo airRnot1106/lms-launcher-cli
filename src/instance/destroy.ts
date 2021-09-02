@@ -1,21 +1,18 @@
 import fs from 'fs';
 import readlineSync from 'readline-sync';
 import chalk from 'chalk';
-import { Cipher, Caution } from './index';
+import { Cipher, Caution, PropertiesReader } from '../index';
 
-import { IFunc } from './iFunc';
+import { IFunc } from '../iFunc';
 
 export default class Destroy implements IFunc {
-  private caution: Caution;
-  private cipher: Cipher;
   constructor() {
-    this.caution = new Caution();
-    this.cipher = new Cipher();
-    if (!fs.existsSync(__dirname + '/config.ini')) {
-      this.caution.toString(new Error('Config file not found'));
-    }
+    PropertiesReader.initialize(false);
   }
   async excute() {
+    this.destroy();
+  }
+  private destroy() {
     const isDestroy = readlineSync.keyInYNStrict(
       chalk.yellow.bold('Do you want to delete config file?')
     );

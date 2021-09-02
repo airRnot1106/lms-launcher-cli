@@ -1,11 +1,9 @@
 import chalk from 'chalk';
 
 export default class Caution {
-  private error: { name: string; message: string } | undefined;
-  constructor() {
-    this.error = undefined;
-  }
-  private initialize(error: Error, cName?: string) {
+  private static error: { name: string; message: string } | undefined =
+    undefined;
+  private static initialize(error: Error, cName?: string) {
     const name = cName || error.name;
     const message = error.message;
     this.error = {
@@ -13,7 +11,7 @@ export default class Caution {
       message: message,
     };
   }
-  toString(error: Error, cName?: string) {
+  static toString(error: Error, cName?: string) {
     this.initialize(error, cName);
     console.error(
       chalk.red.bold(`${this.error?.name}: ${this.error?.message}`)
