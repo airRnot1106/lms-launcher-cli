@@ -30,6 +30,7 @@ Commands:
   lms-launcher-cli c [remove]  Configure user data. The option --remove will
                                destroy the saved configuration
   lms-launcher-cli l           Login to LMS
+  lms-launcher-cli d           Download class resources
 
 Options:
   --version  Show version number                                       [boolean]
