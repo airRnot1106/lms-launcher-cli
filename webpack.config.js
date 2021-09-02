@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 module.exports = {
   // モジュールバンドルを行う起点となるファイルの指定
@@ -35,4 +36,7 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new webpack.BannerPlugin({ banner: '#!/usr/bin/env node', raw: true }),
+  ],
 };
