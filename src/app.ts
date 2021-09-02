@@ -7,6 +7,7 @@ import {
   DestroyController,
   DownloadController,
   DownloadControllerWin,
+  RecordAttendanceController,
 } from './index';
 
 type Argv = {
@@ -24,6 +25,7 @@ export default class App {
     | OpenController
     | DownloadController
     | DownloadControllerWin
+    | RecordAttendanceController
     | undefined;
   constructor() {
     this.isWin = process.platform == 'win32';
@@ -69,6 +71,9 @@ export default class App {
         } else {
           return new DownloadController();
         }
+      case 'a':
+      case 'A':
+        return new RecordAttendanceController();
       default:
         Caution.toString(
           new Error(
