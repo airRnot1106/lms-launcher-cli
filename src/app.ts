@@ -1,13 +1,12 @@
-import puppeteer from 'puppeteer-core';
-import yargs, { boolean } from 'yargs';
+import yargs from 'yargs';
 import chalk from 'chalk';
 import {
   Caution,
-  Config,
-  Destroy,
-  Login,
-  Downloader,
-  DownloaderWin,
+  OpenController,
+  ConfigController,
+  DestroyController,
+  DownloadController,
+  DownloadControllerWin,
 } from './index';
 
 type Argv = {
@@ -18,18 +17,16 @@ type Argv = {
 
 export default class App {
   private isWin: boolean;
-  caution: Caution;
   private argv: Argv | undefined;
   private func:
-    | Config
-    | Destroy
-    | Login
-    | Downloader
-    | DownloaderWin
+    | ConfigController
+    | DestroyController
+    | OpenController
+    | DownloadController
+    | DownloadControllerWin
     | undefined;
   constructor() {
     this.isWin = process.platform == 'win32';
-    this.caution = new Caution();
     this.argv = undefined;
     this.func = undefined;
   }
@@ -59,21 +56,21 @@ export default class App {
       case 'c':
       case 'C':
         if (this.argv?.remove) {
-          return new Destroy();
+          return new DestroyController();
         }
-        return new Config();
+        return new ConfigController();
       case 'l':
       case 'L':
-        return new Login();
+        return new OpenController();
       case 'd':
       case 'D':
         if (this.isWin) {
-          return new DownloaderWin();
+          return new DownloadControllerWin();
         } else {
-          return new Downloader();
+          return new DownloadController();
         }
       default:
-        this.caution.toString(
+        Caution.toString(
           new Error(
             "An invalid command was specified. If you need help, use the '--help' option"
           )
@@ -82,7 +79,7 @@ export default class App {
   }
   private checkExistsFunc() {
     if (!this.func) {
-      this.caution.toString(
+      Caution.toString(
         new Error('An invalid function was specified'),
         'Fatal Error'
       );
