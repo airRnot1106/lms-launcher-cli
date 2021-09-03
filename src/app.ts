@@ -50,6 +50,7 @@ export default class App {
       )
       .command('l', 'Login to LMS')
       .command('d', 'Download class resources')
+      .command('a', 'Record attendance')
       .demandCommand(1)
       .help().argv;
     this.argv = argv;
