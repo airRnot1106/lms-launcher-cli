@@ -1,6 +1,6 @@
 {
   "name": "lms-launcher-cli",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A launcher for Tokai University's Open LMS",
   "main": "dist/cli.js",
   "files": [
@@ -11,7 +11,8 @@
   "scripts": {
     "build": "webpack --mode=development",
     "start": "node dist/cli.js",
-    "test": "node dist/cli.js --help"
+    "test-Win": "node dist/cli.js tW",
+    "test-UNIX": "node dist/cli.js tU"
   },
   "preferGlobal": true,
   "bin": {

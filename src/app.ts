@@ -69,6 +69,12 @@ export default class App {
         } else {
           return new DownloadController();
         }
+      case 'tW':
+        this.test('Win');
+        break;
+      case 'tU':
+        this.test('UNIX');
+        break;
       default:
         Caution.toString(
           new Error(
@@ -88,6 +94,26 @@ export default class App {
   async excute() {
     this.checkExistsFunc();
     await this.func?.excute();
+  }
+  test(platform: 'Win' | 'UNIX') {
+    switch (platform) {
+      case 'Win':
+        if (this.isWin) {
+          console.log(chalk.greenBright('> Passed the Windows test'));
+          process.exit(0);
+        }
+        console.log(chalk.red.bold('> Failed the Windows test'));
+        process.exit(1);
+      case 'UNIX':
+        if (!this.isWin) {
+          console.log(chalk.greenBright('> Passed the UNIX test'));
+          process.exit(0);
+        }
+        console.log(chalk.red.bold('> Failed the UNIX test'));
+        process.exit(1);
+      default:
+        break;
+    }
   }
 }
 
