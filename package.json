@@ -11,7 +11,8 @@
   "scripts": {
     "build": "webpack --mode=development",
     "start": "node dist/cli.js",
-    "test": "node dist/cli.js --help"
+    "test-Win": "node dist/cli.js tW",
+    "test-UNIX": "node dist/cli.js tU"
   },
   "preferGlobal": true,
   "bin": {
