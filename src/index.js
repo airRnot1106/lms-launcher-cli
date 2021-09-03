@@ -16,6 +16,7 @@ export { default as DestroyController } from './controller/destroyController';
 export { default as DownloadController } from './controller/downloadController';
 export { default as DownloadControllerWin } from './controller/downloadControllerWin';
 export { default as RecordAttendanceController } from './controller/recordAttendanceController';
+export { default as RecordAttendanceControllerWin } from './controller/recordAttendanceControllerWin';
 
 //Instance
 export { default as Config } from './instance/config';
