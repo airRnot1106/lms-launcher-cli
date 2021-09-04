@@ -34,13 +34,12 @@ export default class App {
     const argv = await yargs
       .command(
         'c [remove]',
-        'Configure user data. The option --remove will destroy the saved configuration',
+        'Configure user data. The option remove will destroy the saved configuration',
         (yargs) => {
           yargs.positional('remove', {
-            type: 'boolean',
-            default: false,
-            describe:
-              'The option --remove will destroy the saved configuration.',
+            type: 'string',
+            default: '',
+            describe: 'The option remove will destroy the saved configuration.',
           });
         }
       )
@@ -55,7 +54,7 @@ export default class App {
     switch (command) {
       case 'c':
       case 'C':
-        if (this.argv?.remove) {
+        if (this.argv?.remove === 'remove') {
           return new DestroyController();
         }
         return new ConfigController();
