@@ -67,7 +67,7 @@ Open LMS を終了する場合はコンソールで y キーを入力してく�
 
 #### `$ npx lms-launcher-cli d`
 
-<img width="727" alt="downloading" src="https://user-images.githubusercontent.com/62370527/131659030-c02beee5-2b94-46b7-bcee-645bdc4cc015.png">
+<img width="727" alt="downloading" src="https://user-images.githubusercontent.com/62370527/133895295-f9bdd355-d454-464b-a1aa-84a636bf38b3.png">
 
 講義の資料をダウンロードします。<br>
 
