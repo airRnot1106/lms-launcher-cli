@@ -41,5 +41,6 @@ export default class AttendanceRecorder implements IFunc {
       Browser.page?.waitForNavigation(),
       storeButton?.click(),
     ]);
+    console.log(chalk.greenBright('> Attendance has been sent'));
   }
 }
