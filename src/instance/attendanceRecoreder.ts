@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { Browser } from '../../index';
+import { Browser } from '../index';
 import { IFunc } from 'iFunc';
 
 export default class AttendanceRecorder implements IFunc {

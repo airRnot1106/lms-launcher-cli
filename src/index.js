@@ -31,7 +31,7 @@ export { default as ClassSearcherWin } from './instance/Winsows/classSearcherWin
 export { default as ClassSelecterWin } from './instance/Winsows/classSelecterWin';
 export { default as SectionSelecterWin } from './instance/Winsows/sectionSelecterWin';
 export { default as ResourceSelecterWin } from './instance/Winsows/resourceSelecterWin';
-export { default as AttendanceRecorder } from './instance/UNIX/attendanceRecoreder';
+export { default as AttendanceRecorder } from './instance/attendanceRecoreder';
 
 //other
 export { usernameAddress, passwordAddress } from './static/propatiesReader';

@@ -13,13 +13,13 @@ export default class RecordAttendanceControllerWin implements IFunc {
   private _classSearcherWin: ClassSearcherWin;
   private _classSelecterWin: ClassSelecterWin;
   private _sectionSelecterWin: SectionSelecterWin;
-  private _attendanceRecorderWin: AttendanceRecorder;
+  private _attendanceRecorder: AttendanceRecorder;
   constructor() {
     this._login = new Login();
     this._classSearcherWin = new ClassSearcherWin();
     this._classSelecterWin = new ClassSelecterWin();
     this._sectionSelecterWin = new SectionSelecterWin();
-    this._attendanceRecorderWin = new AttendanceRecorder();
+    this._attendanceRecorder = new AttendanceRecorder();
   }
   async excute() {
     await Browser.initialize(true);
@@ -27,6 +27,6 @@ export default class RecordAttendanceControllerWin implements IFunc {
     const classNames = await this._classSearcherWin.excute();
     await this._classSelecterWin.excute(classNames);
     await this._sectionSelecterWin.excute();
-    await this._attendanceRecorderWin.excute();
+    await this._attendanceRecorder.excute();
   }
 }
