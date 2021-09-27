@@ -73,18 +73,18 @@ export default class App {
         } else {
           return new DownloadController();
         }
-      case 'tW':
-        this.test('Win');
-        break;
-      case 'tU':
-        this.test('UNIX');
-        break;
       case 'a':
       case 'A':
         if (this.isWin) {
           return new RecordAttendanceControllerWin();
         }
         return new RecordAttendanceController();
+      case 'tW':
+        this.test('Win');
+        break;
+      case 'tU':
+        this.test('UNIX');
+        break;
       default:
         Caution.toString(
           new Error(
