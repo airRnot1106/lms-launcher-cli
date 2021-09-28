@@ -15,6 +15,12 @@ export default class AttendanceRecorder implements IFunc {
       process.exit(0);
     }
     const link = await attendanceElement.$('.aalink');
+    if (!link) {
+      console.log(
+        chalk.yellow('This is outside the attendance registration period')
+      );
+      process.exit(0);
+    }
     await Promise.all([Browser.page?.waitForNavigation(), link?.click()]);
     const url = Browser.page?.url();
     await Browser.page?.goto(`${url}&view=5`);
