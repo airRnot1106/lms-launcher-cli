@@ -11,7 +11,7 @@ export default class Caution {
       message: message,
     };
   }
-  static toString(error: Error, cName?: string) {
+  static toString(error: Error, cName?: string): never {
     this.initialize(error, cName);
     console.error(
       chalk.red.bold(`${this.error?.name}: ${this.error?.message}`)
