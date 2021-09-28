@@ -31,6 +31,7 @@ Commands:
                                destroy the saved configuration
   lms-launcher-cli l           Login to LMS
   lms-launcher-cli d           Download class resources
+  lms-launcher-cli a           Record attendance
 
 Options:
   --version  Show version number                                       [boolean]
@@ -81,23 +82,30 @@ Open LMS を終了する場合はコンソールで y キーを入力してく�
 
 <img width="729" alt="selectSection" src="https://user-images.githubusercontent.com/62370527/131783789-88020cde-77c3-45b5-b5ab-9fb41271a1b4.png">
 
-セクションの一覧が表示されます。目的のセクションの番号を入力してください。なお、第00回というのはセクションに限らず常に表示される部分のことです。
+セクションの一覧が表示されます。目的のセクションの番号を入力してください。なお、第 00 回というのはセクションに限らず常に表示される部分のことです。
 
 <img width="728" alt="selectResource" src="https://user-images.githubusercontent.com/62370527/131784544-95f946a7-6d62-4927-b595-6cfbfc8b95e1.png">
 
-資料の一覧が表示されます。ダウンロードしたい資料の番号を入力してください。0を入力すると選択を終了します。
+資料の一覧が表示されます。ダウンロードしたい資料の番号を入力してください。0 を入力すると選択を終了します。
 
 <img width="728" alt="continue" src="https://user-images.githubusercontent.com/62370527/131786130-07435343-4105-4f01-b2f4-48f30f010958.png">
 
-複数の資料を同時にダウンロードすることもできます。Yを入力すると再度選択に移行します。
+複数の資料を同時にダウンロードすることもできます。Y を入力すると再度選択に移行します。
 
 <img width="728" alt="downloaded" src="https://user-images.githubusercontent.com/62370527/131786409-5c732c21-679b-46a8-9cbe-760a387d7e7e.png">
 
 選択したすべての資料のダウンロードが完了すると実行を終了します。
 
+#### `$ npx lms-launcher-cli a`
+
+出席登録をします。<br>
+
+Download と同様に科目とセクションを選択してください。<br>
+
+なお、出席期間外のものは登録できません。
+
 ## Future Plans
 
-- CLI 上で出席登録をできるようにする
 - ~~課題の提出をできるようにする~~
 
 ## Author
