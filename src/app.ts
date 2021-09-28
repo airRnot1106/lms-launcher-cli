@@ -7,6 +7,8 @@ import {
   DestroyController,
   DownloadController,
   DownloadControllerWin,
+  RecordAttendanceController,
+  RecordAttendanceControllerWin,
 } from './index';
 
 type Argv = {
@@ -24,6 +26,8 @@ export default class App {
     | OpenController
     | DownloadController
     | DownloadControllerWin
+    | RecordAttendanceController
+    | RecordAttendanceControllerWin
     | undefined;
   constructor() {
     this.isWin = process.platform == 'win32';
@@ -45,6 +49,7 @@ export default class App {
       )
       .command('l', 'Login to LMS')
       .command('d', 'Download class resources')
+      .command('a', 'Record attendance')
       .demandCommand(1)
       .help().argv;
     this.argv = argv;
@@ -68,6 +73,12 @@ export default class App {
         } else {
           return new DownloadController();
         }
+      case 'a':
+      case 'A':
+        if (this.isWin) {
+          return new RecordAttendanceControllerWin();
+        }
+        return new RecordAttendanceController();
       case 'tW':
         this.test('Win');
         break;

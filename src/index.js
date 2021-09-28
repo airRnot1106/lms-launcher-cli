@@ -15,6 +15,8 @@ export { default as ConfigController } from './controller/configController';
 export { default as DestroyController } from './controller/destroyController';
 export { default as DownloadController } from './controller/downloadController';
 export { default as DownloadControllerWin } from './controller/downloadControllerWin';
+export { default as RecordAttendanceController } from './controller/recordAttendanceController';
+export { default as RecordAttendanceControllerWin } from './controller/recordAttendanceControllerWin';
 
 //Instance
 export { default as Config } from './instance/config';
@@ -29,6 +31,7 @@ export { default as ClassSearcherWin } from './instance/Winsows/classSearcherWin
 export { default as ClassSelecterWin } from './instance/Winsows/classSelecterWin';
 export { default as SectionSelecterWin } from './instance/Winsows/sectionSelecterWin';
 export { default as ResourceSelecterWin } from './instance/Winsows/resourceSelecterWin';
+export { default as AttendanceRecorder } from './instance/attendanceRecoreder';
 
 //other
 export { usernameAddress, passwordAddress } from './static/propatiesReader';

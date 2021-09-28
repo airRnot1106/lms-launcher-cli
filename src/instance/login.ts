@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import chalk from 'chalk';
 import { Browser, Caution, PropertiesReader, Spinner } from '../index';
 import { usernameAddress, passwordAddress } from '../static/propatiesReader';
@@ -18,7 +17,14 @@ export default class Login implements IFunc {
     Spinner.start('Now logging in... ');
 
     await Browser.page?.setViewport({ width: 1280, height: 800 });
-    await Browser.page?.goto('https://tlms.tsc.u-tokai.ac.jp/login/index.php');
+    try {
+      await Browser.page?.goto(
+        'https://tlms.tsc.u-tokai.ac.jp/login/index.php'
+      );
+    } catch (error) {
+      Caution.toString(new Error('No Internet connection'), 'Network Error');
+    }
+
     await Browser.page?.type('#username', username);
     await Browser.page?.type('#password', password);
     await Promise.all([
