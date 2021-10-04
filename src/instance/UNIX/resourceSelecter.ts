@@ -15,8 +15,7 @@ export default class resourceSelecter implements IFunc {
   }
   private async selectResource() {
     const parent = await Browser.page?.$('#region-main');
-    const singleSection = await parent?.$('div.single-section');
-    const resources = await singleSection!.$$('li.resource');
+    const resources = await parent!.$$('li.resource');
     if (!resources.length) {
       console.log(chalk.yellow('Resources not found'));
       console.log(chalk.underline('Stop.'));
