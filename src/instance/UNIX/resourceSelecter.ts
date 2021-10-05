@@ -4,9 +4,12 @@ import chalk from 'chalk';
 import { Browser } from '../../index';
 import { IFunc } from 'iFunc';
 
+type ValidType = 'resource' | 'folder';
+
 export type Resource = {
   element: puppeteer.ElementHandle<Element>;
   name: string;
+  type: ValidType;
 };
 
 export default class resourceSelecter implements IFunc {
@@ -16,7 +19,7 @@ export default class resourceSelecter implements IFunc {
   private async selectResource() {
     const parent = await Browser.page?.$('#region-main');
     const singleSection = await parent?.$('div.single-section');
-    const resources = await singleSection!.$$('li.resource');
+    const resources = await singleSection!.$$('li.resource, li.folder');
     if (!resources.length) {
       console.log(chalk.yellow('Resources not found'));
       console.log(chalk.underline('Stop.'));
@@ -34,6 +37,7 @@ export default class resourceSelecter implements IFunc {
       const resourceData: Resource = {
         element: resource,
         name: instancename.substring(0, instancename.indexOf(' ')),
+        type: <ValidType>resource._remoteObject.description?.split('.')[2],
       };
       resourceArray.push(resourceData);
     }
