@@ -1,6 +1,6 @@
 {
   "name": "lms-launcher-cli",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "A launcher for Tokai University's Open LMS",
   "main": "dist/cli.js",
   "files": [
