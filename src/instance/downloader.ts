@@ -20,7 +20,17 @@ export default class Downloader implements IFunc {
     });
 
     const link = await resource.element.$('.aalink');
-    await link?.click();
+    switch (resource.type) {
+      case 'resource':
+        await link?.click();
+        break;
+      case 'folder':
+        await Promise.all([Browser.page?.waitForNavigation(), link?.click()]);
+        const parent = await Browser.page?.$('#region-main');
+        const downloadBtn = await parent?.$('button');
+        await downloadBtn?.click();
+        break;
+    }
     await this.waitDownloadComplete(downloadPath);
     console.log(chalk.greenBright(`> ${resource.name} download has completed`));
   }
