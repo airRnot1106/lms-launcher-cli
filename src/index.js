@@ -4,7 +4,7 @@ export { default as App } from './app';
 //Static
 export { default as Browser } from './static/browser';
 export { default as Caution } from './static/caution';
-export { default as PropertiesReader } from './static/propatiesReader';
+export { default as PropertiesReader } from './static/propertiesReader';
 export { default as Cipher } from './static/cipher';
 export { default as Spinner } from './static/spinner';
 export { default as Prompter } from './static/prompter';
@@ -34,4 +34,4 @@ export { default as ResourceSelectorWin } from './instance/Windows/resourceSelec
 export { default as AttendanceRecorder } from './instance/attendanceRecorder';
 
 //other
-export { usernameAddress, passwordAddress } from './static/propatiesReader';
+export { usernameAddress, passwordAddress } from './static/propertiesReader';

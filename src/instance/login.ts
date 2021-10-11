@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import { Browser, Caution, PropertiesReader, Spinner } from '../index';
-import { usernameAddress, passwordAddress } from '../static/propatiesReader';
+import { usernameAddress, passwordAddress } from '../static/propertiesReader';
 import { IFunc } from '../iFunc';
 
 export default class Login implements IFunc {
