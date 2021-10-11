@@ -3,9 +3,9 @@ import {
   Browser,
   Login,
   ClassSearcherWin,
-  ClassSelecterWin,
-  SectionSelecterWin,
-  ResourceSelecterWin,
+  ClassSelectorWin,
+  SectionSelectorWin,
+  ResourceSelectorWin,
   Downloader,
 } from '../index';
 import { IFunc } from '../iFunc';
@@ -13,16 +13,16 @@ import { IFunc } from '../iFunc';
 export default class DownloadControllerWin implements IFunc {
   private _login: Login;
   private _searchingClassWin: ClassSearcherWin;
-  private _selectingClassWin: ClassSelecterWin;
-  private _selectingSectionWin: SectionSelecterWin;
-  private _selectingResourceWin: ResourceSelecterWin;
+  private _selectingClassWin: ClassSelectorWin;
+  private _selectingSectionWin: SectionSelectorWin;
+  private _selectingResourceWin: ResourceSelectorWin;
   private _downloader: Downloader;
   constructor() {
     this._login = new Login();
     this._searchingClassWin = new ClassSearcherWin();
-    this._selectingClassWin = new ClassSelecterWin();
-    this._selectingSectionWin = new SectionSelecterWin();
-    this._selectingResourceWin = new ResourceSelecterWin();
+    this._selectingClassWin = new ClassSelectorWin();
+    this._selectingSectionWin = new SectionSelectorWin();
+    this._selectingResourceWin = new ResourceSelectorWin();
     this._downloader = new Downloader();
   }
   async execute() {

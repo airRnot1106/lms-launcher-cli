@@ -2,8 +2,8 @@ import {
   Browser,
   Login,
   ClassSearcher,
-  ClassSelecter,
-  SectionSelecter,
+  ClassSelector,
+  SectionSelector,
   AttendanceRecorder,
 } from '../index';
 import { IFunc } from 'iFunc';
@@ -11,14 +11,14 @@ import { IFunc } from 'iFunc';
 export default class RecordAttendanceController implements IFunc {
   private _login: Login;
   private _classSearcher: ClassSearcher;
-  private _classSelecter: ClassSelecter;
-  private _sectionSelecter: SectionSelecter;
+  private _classSelecter: ClassSelector;
+  private _sectionSelecter: SectionSelector;
   private _attendanceRecorder: AttendanceRecorder;
   constructor() {
     this._login = new Login();
     this._classSearcher = new ClassSearcher();
-    this._classSelecter = new ClassSelecter();
-    this._sectionSelecter = new SectionSelecter();
+    this._classSelecter = new ClassSelector();
+    this._sectionSelecter = new SectionSelector();
     this._attendanceRecorder = new AttendanceRecorder();
   }
   async execute() {

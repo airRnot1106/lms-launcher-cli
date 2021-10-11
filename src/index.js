@@ -23,14 +23,14 @@ export { default as Config } from './instance/config';
 export { default as Destroy } from './instance/destroy';
 export { default as Login } from './instance/login';
 export { default as ClassSearcher } from './instance/UNIX/classSearcher';
-export { default as ClassSelecter } from './instance/UNIX/classSelector';
-export { default as SectionSelecter } from './instance/UNIX/sectionSelector';
-export { default as ResourceSelecter } from './instance/UNIX/resourceSelector';
+export { default as ClassSelector } from './instance/UNIX/classSelector';
+export { default as SectionSelector } from './instance/UNIX/sectionSelector';
+export { default as ResourceSelector } from './instance/UNIX/resourceSelector';
 export { default as Downloader } from './instance/downloader';
 export { default as ClassSearcherWin } from './instance/Windows/classSearcherWin';
-export { default as ClassSelecterWin } from './instance/Windows/classSelectorWin';
-export { default as SectionSelecterWin } from './instance/Windows/sectionSelectorWin';
-export { default as ResourceSelecterWin } from './instance/Windows/resourceSelectorWin';
+export { default as ClassSelectorWin } from './instance/Windows/classSelectorWin';
+export { default as SectionSelectorWin } from './instance/Windows/sectionSelectorWin';
+export { default as ResourceSelectorWin } from './instance/Windows/resourceSelectorWin';
 export { default as AttendanceRecorder } from './instance/attendanceRecoreder';
 
 //other
