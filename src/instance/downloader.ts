@@ -2,7 +2,7 @@ import fs from 'fs';
 import chalk from 'chalk';
 import { Browser, Spinner } from '../index';
 import { IFunc } from 'iFunc';
-import { Resource } from './UNIX/resourceSelecter';
+import { Resource } from './UNIX/resourceSelector';
 
 export default class Downloader implements IFunc {
   async execute(resource: Resource) {
