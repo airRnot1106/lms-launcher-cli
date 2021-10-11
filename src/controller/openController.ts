@@ -8,10 +8,10 @@ export default class OpenController implements IFunc {
   constructor() {
     this._login = new Login();
   }
-  async excute() {
+  async execute() {
     await Browser.initialize(false);
     console.log('> Login <');
-    await this._login.excute();
+    await this._login.execute();
     while (1) {
       const isClose = readlineSync.keyInYNStrict(
         chalk.bold('Do you want to close your browser?')

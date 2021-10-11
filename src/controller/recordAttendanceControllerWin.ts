@@ -2,8 +2,8 @@ import {
   Browser,
   Login,
   ClassSearcherWin,
-  ClassSelecterWin,
-  SectionSelecterWin,
+  ClassSelectorWin,
+  SectionSelectorWin,
   AttendanceRecorder,
 } from '../index';
 import { IFunc } from 'iFunc';
@@ -11,22 +11,22 @@ import { IFunc } from 'iFunc';
 export default class RecordAttendanceControllerWin implements IFunc {
   private _login: Login;
   private _classSearcherWin: ClassSearcherWin;
-  private _classSelecterWin: ClassSelecterWin;
-  private _sectionSelecterWin: SectionSelecterWin;
+  private _classSelectorWin: ClassSelectorWin;
+  private _sectionSelectorWin: SectionSelectorWin;
   private _attendanceRecorder: AttendanceRecorder;
   constructor() {
     this._login = new Login();
     this._classSearcherWin = new ClassSearcherWin();
-    this._classSelecterWin = new ClassSelecterWin();
-    this._sectionSelecterWin = new SectionSelecterWin();
+    this._classSelectorWin = new ClassSelectorWin();
+    this._sectionSelectorWin = new SectionSelectorWin();
     this._attendanceRecorder = new AttendanceRecorder();
   }
-  async excute() {
+  async execute() {
     await Browser.initialize(true);
-    await this._login.excute();
-    const classNames = await this._classSearcherWin.excute();
-    await this._classSelecterWin.excute(classNames);
-    await this._sectionSelecterWin.excute();
-    await this._attendanceRecorder.excute();
+    await this._login.execute();
+    const classNames = await this._classSearcherWin.execute();
+    await this._classSelectorWin.execute(classNames);
+    await this._sectionSelectorWin.execute();
+    await this._attendanceRecorder.execute();
   }
 }

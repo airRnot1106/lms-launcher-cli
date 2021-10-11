@@ -3,8 +3,8 @@ import chalk from 'chalk';
 import { Browser, Caution } from '../../index';
 import { IFunc } from 'iFunc';
 
-export default class ClassSelecter implements IFunc {
-  async excute(classNames: string[]) {
+export default class ClassSelector implements IFunc {
+  async execute(classNames: string[]) {
     await this.selectClass(classNames);
   }
   private async selectClass(classNames: string[]) {

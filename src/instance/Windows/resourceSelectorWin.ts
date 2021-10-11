@@ -50,8 +50,8 @@ type Resource = {
   type: ValidType;
 };
 
-export default class resourceSelecterWin implements IFunc {
-  async excute() {
+export default class resourceSelectorWin implements IFunc {
+  async execute() {
     return await this.selectResource();
   }
   private async selectResource() {

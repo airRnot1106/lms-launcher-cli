@@ -101,9 +101,9 @@ export default class App {
       );
     }
   }
-  async excute() {
+  async execute() {
     this.checkExistsFunc();
-    await this.func?.excute();
+    await this.func?.execute();
   }
   test(platform: 'Win' | 'UNIX') {
     switch (platform) {
@@ -132,7 +132,7 @@ export function cli() {
     const app = new App();
     await app.initialize();
     console.log(chalk.underline('Launch...'));
-    await app.excute();
+    await app.execute();
     console.log(chalk.underline('Stop.'));
     process.exit(0);
   })();

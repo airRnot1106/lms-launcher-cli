@@ -3,10 +3,10 @@ import { Browser } from '../index';
 import { IFunc } from 'iFunc';
 
 export default class AttendanceRecorder implements IFunc {
-  async excute() {
-    await this.recoredAttendance();
+  async execute() {
+    await this.recordAttendance();
   }
-  private async recoredAttendance() {
+  private async recordAttendance() {
     const parent = await Browser.page?.$('#region-main');
     const attendanceElement = await parent!.$('li.attendance');
     if (!attendanceElement) {
@@ -23,7 +23,7 @@ export default class AttendanceRecorder implements IFunc {
     }
     await Promise.all([Browser.page?.waitForNavigation(), link?.click()]);
     const url = Browser.page?.url();
-    await Browser.page?.goto(`${url}&view=5`);
+    await Browser.page?.goto(`${url}&view=1`);
     const statusCol = await Browser.page?.$('td.statuscol');
     const sendButton = await statusCol?.$x(
       './/a[contains(text(), "出欠を送信する")]'

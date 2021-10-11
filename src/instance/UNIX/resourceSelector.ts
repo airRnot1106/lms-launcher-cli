@@ -12,8 +12,8 @@ export type Resource = {
   type: ValidType;
 };
 
-export default class resourceSelecter implements IFunc {
-  async excute() {
+export default class resourceSelector implements IFunc {
+  async execute() {
     return await this.selectResource();
   }
   private async selectResource() {

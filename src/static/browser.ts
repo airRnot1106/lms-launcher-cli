@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer-core';
 import { Caution } from '../index';
 
 export default abstract class Browser {
-  private static _isVaild = false;
+  private static _isValid = false;
   private static _browser: puppeteer.Browser | undefined = undefined;
   private static _page: puppeteer.Page | undefined = undefined;
   constructor() {}
@@ -13,16 +13,16 @@ export default abstract class Browser {
     });
     this._page =
       (await this._browser.pages())[0] || (await this._browser.newPage());
-    this._isVaild = true;
+    this._isValid = true;
   }
   static get browser() {
-    if (!this._isVaild) {
+    if (!this._isValid) {
       Caution.toString(new Error('Browser is not initialized'), 'Fatal Error');
     }
     return this._browser;
   }
   static get page() {
-    if (!this._isVaild) {
+    if (!this._isValid) {
       Caution.toString(new Error('Browser is not initialized'), 'Fatal Error');
     }
     return this._page;
