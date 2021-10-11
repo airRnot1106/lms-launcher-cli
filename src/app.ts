@@ -101,7 +101,7 @@ export default class App {
       );
     }
   }
-  async excute() {
+  async execute() {
     this.checkExistsFunc();
     await this.func?.execute();
   }
@@ -132,7 +132,7 @@ export function cli() {
     const app = new App();
     await app.initialize();
     console.log(chalk.underline('Launch...'));
-    await app.excute();
+    await app.execute();
     console.log(chalk.underline('Stop.'));
     process.exit(0);
   })();
