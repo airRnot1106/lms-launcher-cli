@@ -46,7 +46,7 @@ type TargetSection = {
   id: string;
 };
 
-export default class SectionSelecterWin implements IFunc {
+export default class SectionSelectorWin implements IFunc {
   async execute() {
     await this.selectSection();
   }

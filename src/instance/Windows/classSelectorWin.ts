@@ -41,7 +41,7 @@ const keys = [
   'z',
 ];
 
-export default class ClassSelecterWin implements IFunc {
+export default class ClassSelectorWin implements IFunc {
   async execute(classNames: string[]) {
     await this.selectClass(classNames);
   }

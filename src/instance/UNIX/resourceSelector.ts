@@ -12,7 +12,7 @@ export type Resource = {
   type: ValidType;
 };
 
-export default class resourceSelecter implements IFunc {
+export default class resourceSelector implements IFunc {
   async execute() {
     return await this.selectResource();
   }
