@@ -4,9 +4,9 @@ import { IFunc } from 'iFunc';
 
 export default class AttendanceRecorder implements IFunc {
   async execute() {
-    await this.recoredAttendance();
+    await this.recordAttendance();
   }
-  private async recoredAttendance() {
+  private async recordAttendance() {
     const parent = await Browser.page?.$('#region-main');
     const attendanceElement = await parent!.$('li.attendance');
     if (!attendanceElement) {
