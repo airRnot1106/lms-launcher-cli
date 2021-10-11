@@ -23,7 +23,7 @@ export default class AttendanceRecorder implements IFunc {
     }
     await Promise.all([Browser.page?.waitForNavigation(), link?.click()]);
     const url = Browser.page?.url();
-    await Browser.page?.goto(`${url}&view=5`);
+    await Browser.page?.goto(`${url}&view=1`);
     const statusCol = await Browser.page?.$('td.statuscol');
     const sendButton = await statusCol?.$x(
       './/a[contains(text(), "出欠を送信する")]'
