@@ -5,7 +5,7 @@ import { Browser } from '../../index';
 import { IFunc } from '../../iFunc';
 
 export default class ClassSearcher implements IFunc {
-  async excute() {
+  async execute() {
     return await this.searchClass();
   }
   private async searchClass() {

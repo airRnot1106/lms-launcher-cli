@@ -1,3 +1,3 @@
 export interface IFunc {
-  excute(data?: any): void;
+  execute(data?: any): void;
 }

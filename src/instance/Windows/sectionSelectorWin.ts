@@ -46,8 +46,8 @@ type TargetSection = {
   id: string;
 };
 
-export default class SectionSelecterWin implements IFunc {
-  async excute() {
+export default class SectionSelectorWin implements IFunc {
+  async execute() {
     await this.selectSection();
   }
   private async selectSection() {
@@ -85,7 +85,11 @@ export default class SectionSelecterWin implements IFunc {
       const parent = await Browser.page?.$(targetSection.id);
       const element = await parent?.$('.section-title');
       const href = await element!.$('a');
-      await Promise.all([Browser.page?.waitForNavigation(), href?.click()]);
+      if (!href) {
+        console.log(chalk.yellow('This section is not selectable'));
+        process.exit(0);
+      }
+      await Promise.all([Browser.page?.waitForNavigation(), href.click()]);
     }
   }
 }

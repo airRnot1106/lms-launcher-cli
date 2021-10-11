@@ -18,7 +18,7 @@ export const passwordAddress: Ini = {
 };
 
 export default class PropertiesReader {
-  private static _isVaild = false;
+  private static _isValid = false;
   private static _properties: propertiesReader.Reader | undefined = undefined;
   static initialize(isAllowNotExists: boolean) {
     if (isAllowNotExists) {
@@ -36,10 +36,10 @@ export default class PropertiesReader {
       }
     }
     this._properties = propertiesReader(__dirname + '/config.ini');
-    this._isVaild = true;
+    this._isValid = true;
   }
   static async write(address: Ini, data: string) {
-    if (!this._isVaild) {
+    if (!this._isValid) {
       Caution.toString(
         new Error('PropertiesReader is not initialized'),
         'Fatal Error'
@@ -54,7 +54,7 @@ export default class PropertiesReader {
     );
   }
   static async writeCipher(address: Ini, data: string) {
-    if (!this._isVaild) {
+    if (!this._isValid) {
       Caution.toString(
         new Error('PropertiesReader is not initialized'),
         'Fatal Error'
@@ -70,7 +70,7 @@ export default class PropertiesReader {
     );
   }
   static read(address: Ini) {
-    if (!this._isVaild) {
+    if (!this._isValid) {
       Caution.toString(
         new Error('PropertiesReader is not initialized'),
         'Fatal Error'
@@ -79,7 +79,7 @@ export default class PropertiesReader {
     return <string>this._properties?.get(`${address.section}.${address.key}`);
   }
   static readCipher(address: Ini) {
-    if (!this._isVaild) {
+    if (!this._isValid) {
       Caution.toString(
         new Error('PropertiesReader is not initialized'),
         'Fatal Error'

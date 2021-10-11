@@ -6,7 +6,7 @@ export default class ConfigController implements IFunc {
   constructor() {
     this._config = new Config();
   }
-  async excute() {
-    await this._config.excute();
+  async execute() {
+    await this._config.execute();
   }
 }
