@@ -9,7 +9,7 @@ export default class Destroy implements IFunc {
   constructor() {
     PropertiesReader.initialize(false);
   }
-  async excute() {
+  async execute() {
     this.destroy();
   }
   private destroy() {

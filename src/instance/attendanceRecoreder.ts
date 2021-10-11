@@ -3,7 +3,7 @@ import { Browser } from '../index';
 import { IFunc } from 'iFunc';
 
 export default class AttendanceRecorder implements IFunc {
-  async excute() {
+  async execute() {
     await this.recoredAttendance();
   }
   private async recoredAttendance() {

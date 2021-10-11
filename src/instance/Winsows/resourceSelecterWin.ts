@@ -51,7 +51,7 @@ type Resource = {
 };
 
 export default class resourceSelecterWin implements IFunc {
-  async excute() {
+  async execute() {
     return await this.selectResource();
   }
   private async selectResource() {

@@ -4,7 +4,7 @@ import { Browser, Caution } from '../../index';
 import { IFunc } from 'iFunc';
 
 export default class ClassSelecter implements IFunc {
-  async excute(classNames: string[]) {
+  async execute(classNames: string[]) {
     await this.selectClass(classNames);
   }
   private async selectClass(classNames: string[]) {

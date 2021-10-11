@@ -6,7 +6,7 @@ export default class DestroyController implements IFunc {
   constructor() {
     this._destroy = new Destroy();
   }
-  async excute() {
-    this._destroy.excute();
+  async execute() {
+    this._destroy.execute();
   }
 }

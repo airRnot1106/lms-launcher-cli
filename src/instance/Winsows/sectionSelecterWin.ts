@@ -47,7 +47,7 @@ type TargetSection = {
 };
 
 export default class SectionSelecterWin implements IFunc {
-  async excute() {
+  async execute() {
     await this.selectSection();
   }
   private async selectSection() {

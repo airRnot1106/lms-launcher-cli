@@ -7,7 +7,7 @@ export default class Login implements IFunc {
   constructor() {
     PropertiesReader.initialize(false);
   }
-  async excute() {
+  async execute() {
     await this.login();
   }
   private async login() {

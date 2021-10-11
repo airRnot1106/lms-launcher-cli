@@ -21,12 +21,12 @@ export default class RecordAttendanceController implements IFunc {
     this._sectionSelecter = new SectionSelecter();
     this._attendanceRecorder = new AttendanceRecorder();
   }
-  async excute() {
+  async execute() {
     await Browser.initialize(true);
-    await this._login.excute();
-    const classNames = await this._classSearcher.excute();
-    await this._classSelecter.excute(classNames);
-    await this._sectionSelecter.excute();
-    await this._attendanceRecorder.excute();
+    await this._login.execute();
+    const classNames = await this._classSearcher.execute();
+    await this._classSelecter.execute(classNames);
+    await this._sectionSelecter.execute();
+    await this._attendanceRecorder.execute();
   }
 }

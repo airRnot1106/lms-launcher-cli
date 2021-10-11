@@ -5,7 +5,7 @@ import { IFunc } from 'iFunc';
 import { Resource } from './UNIX/resourceSelecter';
 
 export default class Downloader implements IFunc {
-  async excute(resource: Resource) {
+  async execute(resource: Resource) {
     await this.download(resource);
   }
   private async download(resource: Resource) {

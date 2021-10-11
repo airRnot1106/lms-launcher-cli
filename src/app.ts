@@ -103,7 +103,7 @@ export default class App {
   }
   async excute() {
     this.checkExistsFunc();
-    await this.func?.excute();
+    await this.func?.execute();
   }
   test(platform: 'Win' | 'UNIX') {
     switch (platform) {

@@ -25,15 +25,15 @@ export default class DownloadController implements IFunc {
     this._selectingResource = new ResourceSelecter();
     this._downloader = new Downloader();
   }
-  async excute() {
+  async execute() {
     await Browser.initialize(true);
-    await this._login.excute();
-    const classNames = await this._searchingClass.excute();
-    await this._selectingClass.excute(classNames);
-    await this._selectingSection.excute();
-    const downloadQueue = await this._selectingResource.excute();
+    await this._login.execute();
+    const classNames = await this._searchingClass.execute();
+    await this._selectingClass.execute(classNames);
+    await this._selectingSection.execute();
+    const downloadQueue = await this._selectingResource.execute();
     for (let resource of downloadQueue) {
-      await this._downloader.excute(resource);
+      await this._downloader.execute(resource);
     }
     console.log(
       chalk.greenBright.bold.bgGray('\n> All downloads are complete\n')

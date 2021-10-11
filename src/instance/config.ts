@@ -8,7 +8,7 @@ export default class Config implements IFunc {
   constructor() {
     PropertiesReader.initialize(true);
   }
-  async excute() {
+  async execute() {
     await this.configure();
   }
   private async configure() {

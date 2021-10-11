@@ -42,7 +42,7 @@ const keys = [
 ];
 
 export default class ClassSelecterWin implements IFunc {
-  async excute(classNames: string[]) {
+  async execute(classNames: string[]) {
     await this.selectClass(classNames);
   }
   private async selectClass(classNames: string[]) {

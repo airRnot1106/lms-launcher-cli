@@ -13,7 +13,7 @@ export type Resource = {
 };
 
 export default class resourceSelecter implements IFunc {
-  async excute() {
+  async execute() {
     return await this.selectResource();
   }
   private async selectResource() {
